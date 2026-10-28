@@ -1,14 +1,13 @@
 import { ThemeProvider } from '@emotion/react'
 
 import { GlobalStyles, theme } from '@/shared/styles'
-import { GeminiTest } from '@/pages/home/ui/GeminiTest'
+import { HomePage } from '@/pages/home/ui/HomePage'
 
 export const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      {/* <h1>tana</h1> */}
-      <GeminiTest />
+      <HomePage />
     </ThemeProvider>
   )
 }

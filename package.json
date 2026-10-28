@@ -17,6 +17,7 @@
     "firebase": "^13.1.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "zod": "^4.6.7",
     "zustand": "^5.0.15"
   },
   "devDependencies": {
