@@ -11,5 +11,6 @@ export function AppLayout({ children }: AppLayoutProps) {
 
 const Main = styled.main`
   width: ${({ theme }) => theme.layout.width}px;
+  height: 100vh;
   margin: 0 auto;
 `

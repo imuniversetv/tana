@@ -4,7 +4,7 @@ import arrowDoubleIcon from '@/assets/icons/arrow-double.svg'
 import { getAgent } from '@/entities/agent'
 import type { AgentId } from '@/entities/agent'
 
-interface AgentSpeechProps {
+export interface AgentSpeechProps {
   role: AgentId
   message: string
   onNext: () => void
