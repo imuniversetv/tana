@@ -1,4 +1,17 @@
 export { runAgent } from './api/runAgent'
+export { createTrialOrchestrator, TrialOrchestratorError } from './api/createTrialOrchestrator'
+export type { StartTrialOptions, TrialOrchestratorOptions } from './api/createTrialOrchestrator'
+export type {
+  TrialAgentError,
+  TrialAgentResult,
+  TrialErrorKind,
+  TrialEvent,
+  TrialFailure,
+  TrialMessage,
+  TrialPhase,
+  TrialRecord,
+  TrialStatus,
+} from './model/trial.session'
 export { AgentPlayground } from './ui/AgentPlayground'
 export { buildAgentPrompt } from './lib/buildAgentPrompt'
 export type { AgentPrompt } from './lib/buildAgentPrompt'

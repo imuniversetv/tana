@@ -21,5 +21,12 @@ export type {
   TrialStatement,
   Verdict,
 } from './model/trial.types'
-export { JURY_RUBRIC, JURY_TOTAL_MAX, summarizeJuryVotes } from './model/jury'
-export type { JuryTally } from './model/jury'
+export {
+  aggregateJury,
+  calculatedScoreTotal,
+  JURY_RUBRIC,
+  JURY_TOTAL_MAX,
+  juryScoreMismatches,
+  summarizeJuryVotes,
+} from './model/jury'
+export type { JuryAggregate, JuryScoreMismatch, JuryTally } from './model/jury'
