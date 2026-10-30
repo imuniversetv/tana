@@ -1,0 +1,30 @@
+export const OUTPUT_LIMITS = {
+  statement: { min: 80, max: 1600 },
+  argument: { min: 2, max: 4 },
+  claim: { max: 200 },
+  reasoning: { max: 600 },
+  limitation: { min: 1, max: 3, text: 300 },
+  counter: { min: 1, max: 4 },
+  counterText: { max: 600 },
+  concession: { max: 300 },
+  issue: { min: 2, max: 5, title: 80, description: 400 },
+  criterion: { min: 2, max: 5, name: 40, description: 300 },
+  rationale: { min: 40, max: 1200 },
+  perspectiveNotes: { min: 20, max: 800 },
+  opinion: { min: 120, max: 2500 },
+  juryReview: { min: 40, max: 1200 },
+  grounds: { min: 2, max: 5, text: 400 },
+  conditions: { max: 4, text: 300 },
+  divergenceReason: { max: 800 },
+  proposition: { max: 500 },
+  topic: { max: 120 },
+  originalText: { max: 4000 },
+} as const
+
+export const MAX_OUTPUT_TOKENS = {
+  opening: 4096,
+  rebuttal: 4096,
+  closing: 4096,
+  evaluation: 4096,
+  judgment: 8192,
+} as const
