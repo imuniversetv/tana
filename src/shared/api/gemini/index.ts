@@ -1,0 +1,6 @@
+export { geminiAI, geminiModel } from './client'
+export { StructuredContentError } from './errors'
+export type { StructuredContentCode } from './errors'
+export { generateStructuredContent } from './generateStructuredContent'
+export type { GenerateStructuredContentParams } from './generateStructuredContent'
+export { generateText } from './generateText'
