@@ -1,8 +1,23 @@
 import styled from '@emotion/styled'
 
 import arrowDoubleIcon from '@/assets/icons/arrow-double.svg'
+import conAdvocateProfile from '@/assets/images/con-advocate-profile.png'
+import judgeProfile from '@/assets/images/Judge-profile.png'
+import jurorProfile from '@/assets/images/juror-profile.png'
+import proAdvocateProfile from '@/assets/images/pro-advocate-profile.png'
 import { getAgent } from '@/entities/agent'
 import type { AgentId } from '@/entities/agent'
+
+const PROFILE_IMAGE: Record<AgentId, string> = {
+  judge: judgeProfile,
+  'pro-advocate': proAdvocateProfile,
+  'con-advocate': conAdvocateProfile,
+  'juror-logic': jurorProfile,
+  'juror-evidence': jurorProfile,
+  'juror-practicality': jurorProfile,
+  'juror-user-experience': jurorProfile,
+  'juror-critical-thinking': jurorProfile,
+}
 
 export interface AgentSpeechProps {
   role: AgentId
@@ -13,22 +28,38 @@ export interface AgentSpeechProps {
 
 export function AgentSpeech({ role, message, onNext, disabled = false }: AgentSpeechProps) {
   return (
-    <Bar>
-      <Content>
-        <Role>{getAgent(role).name}</Role>
-        <Message>{message}</Message>
-        <NextButton type="button" onClick={onNext} disabled={disabled} aria-label="다음 대답">
-          <img src={arrowDoubleIcon} alt="" width={35} height={30} />
-        </NextButton>
-      </Content>
-    </Bar>
+    <>
+      <Profile src={PROFILE_IMAGE[role]} alt="프로필 이미지" />
+      <Bar>
+        <Content>
+          <Role>{getAgent(role).name}</Role>
+          <Message>{message}</Message>
+          <NextButton type="button" onClick={onNext} disabled={disabled} aria-label="다음 대답">
+            <img src={arrowDoubleIcon} alt="" width={35} height={30} />
+          </NextButton>
+        </Content>
+      </Bar>
+    </>
   )
 }
+
+const Profile = styled.img`
+  position: absolute;
+  bottom: 300px;
+  z-index: 1;
+  height: 340px;
+  width: auto;
+  max-width: none;
+  pointer-events: none;
+  left: 50%;
+  transform: translateX(-50%);
+`
 
 const Bar = styled.section`
   position: absolute;
   left: 50%;
   bottom: 40px;
+  z-index: 2;
   transform: translateX(-50%);
   width: 100cqw;
   height: 260px;
@@ -76,6 +107,7 @@ const Message = styled.p`
   font-size: 20px;
   line-height: 1.5;
   white-space: pre-wrap;
+  overflow-y: auto;
 `
 
 const NextButton = styled.button`
