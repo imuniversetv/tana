@@ -22,9 +22,7 @@ export function HomePage() {
 }
 
 const Page = styled.main`
-  width: min(760px, 100%);
-  margin: 0 auto;
-  padding: 40px 20px 80px;
+  padding: 40px 0 80px;
   display: grid;
   gap: 40px;
 
