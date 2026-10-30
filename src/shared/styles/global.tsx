@@ -39,6 +39,10 @@ export const GlobalStyles = () => {
           min-height: 100%;
         }
 
+        #root {
+          container-type: inline-size;
+        }
+
         body {
           min-width: ${theme.layout.width}px;
           font-family: '${theme.font.family}', sans-serif;
